@@ -53,7 +53,8 @@ function handleReplyClick(replyId){
 }
 
 function handleTweetBtnClick(){
-    tweetsData.unshift({
+    if(tweetInput.value) {
+        tweetsData.unshift({
         handle: `@Scrimba`,
         profilePic: `images/scrimbalogo.png`,
         likes: 0,
@@ -63,8 +64,10 @@ function handleTweetBtnClick(){
         isLiked: false,
         isRetweeted: false,
         uuid: uuidv4()
-    })
-    render()
+        })
+        tweetInput.value = '';
+        render()
+    }
 }
 
 function getFeedHtml(){
