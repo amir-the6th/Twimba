@@ -82,7 +82,6 @@ function getFeedHtml(){
         let repliesHtml = ''
         
         if(tweet.replies.length > 0){
-            console.log(tweet.uuid)
             tweet.replies.forEach((reply)=> {
                 repliesHtml += `
                 <div class="tweet-reply">
