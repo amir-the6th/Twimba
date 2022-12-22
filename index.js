@@ -10,16 +10,42 @@ document.addEventListener('click', function(e){
     if(e.target.dataset.like){
        handleLikeClick(e.target.dataset.like) 
     }
+    else if(e.target.dataset.retweet){
+        handleRetweetClick(e.target.dataset.retweet);
+    }
 })
 
 function handleLikeClick(tweetId){ 
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
-    
-    targetTweetObj.likes++
-    
+
+    if (targetTweetObj.isLiked){
+        targetTweetObj.likes--
+    }
+    else{
+        targetTweetObj.likes++ 
+    }
+    targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
+}
+
+function handleRetweetClick(tweetId){
+/*
+Challenge:
+2. Find the retweeted tweet's object in tweetsData 
+   and save it to a const.
+3. Increment or decrement the retweet count of the 
+   tweet and flip its isRetweeted boolean.
+4. Call the render function.  
+*/   
+    const tweetObj = tweetsData.filter((tweet) => {
+        return tweet.uuid === tweetId;
+    })[0]
+    
+    tweetObj.isRetweeted ? tweetObj.retweets-- : tweetObj.retweets++;
+    tweetObj.isRetweeted = !tweetObj.isRetweeted;
+    render();
 }
 
 function getFeedHtml(){
