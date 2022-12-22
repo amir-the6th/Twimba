@@ -1,6 +1,7 @@
 # Twimba-Twitter-Clone
+### [Live Site Url](https://amir-the6th.github.io/Twimba/)
 
-### Twimba is a simple clone of the Twitter interface, containing a number of tweets and working functionalities such as like, retweet, and comment
+Twimba is a simple clone of the Twitter interface, containing a number of tweets and working functionalities such as like, retweet, and comment.
 
 This project was completed during the Essential JavaScript Concepts course.
 
